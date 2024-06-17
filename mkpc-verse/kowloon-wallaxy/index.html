@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+        <title>MKPC-verse</title>
+        <!-- Buildiful World CSS -->
+        <link rel="stylesheet" type="text/css" href="../../css/styles.css">
+        <!-- MKPC-verse CSS -->
+        <link rel="stylesheet" type="text/css" href="../css/styles.css">
+        <!-- Kowloon Wallaxy CSS -->
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <link rel="icon" type="image/png" href="../favicon.png">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto Mono">
+        <meta name="description" content="Kowloon Wallaxy Tour">
+    </head>
+
+    <body>
+        <div class="main">
+            <!-- The video -->
+            <video autoplay muted loop id="video_div">
+                <source src="res/videos/demo.mp4" type="video/mp4">
+            </video>
+            
+            <!-- Some overlay text to describe the video -->
+            <div class="exhibit_overlay">
+                <h1>[Some Useful Info]</h1>
+                <p>About various parts of Kowloon Walled City</p>
+                <!-- Use a button to pause/play the video with JavaScript -->
+                <button id="video_button" onclick="return_home()">HOME</button>
+                <button id="video_button" onclick="enter_fullscreen()">&#x26F6;</button>
+                <button id="video_button" onclick="exit_fullscreen()">&#10016;</button>
+            </div>
+        </div>
+
+        <script>
+            function return_home()
+            {
+                window.location.href = "../";
+            }
+
+            function enter_fullscreen()
+            {
+                // if (video.paused)
+                // {
+                //     video.play();
+                //     btn.innerHTML = "Pause";
+                // }
+                // else
+                // {
+                //     video.pause();
+                //     btn.innerHTML = "Play";
+                // }
+                
+                /* Get the documentElement (<html>) to display the page in fullscreen */
+                var elem = document.documentElement;
+                
+                /* When the openFullscreen() function is executed, open the video in fullscreen.
+                Note that we must include prefixes for different browsers, as they don't support the requestFullscreen method yet */
+                if (elem.requestFullscreen) {
+                    elem.requestFullscreen();
+                } else if (elem.webkitRequestFullscreen) { /* Safari */
+                    elem.webkitRequestFullscreen();
+                } else if (elem.msRequestFullscreen) { /* IE11 */
+                    elem.msRequestFullscreen();
+                }
+            }
+
+            function exit_fullscreen()
+            {
+                if (document && document.hasFocus())
+                {
+                    if (document.exitFullscreen) {
+                        document.exitFullscreen();
+                    } else if (document.webkitExitFullscreen) { /* Safari */
+                        document.webkitExitFullscreen();
+                    } else if (document.msExitFullscreen) { /* IE11 */
+                        document.msExitFullscreen();
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>

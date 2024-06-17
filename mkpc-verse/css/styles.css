@@ -1,0 +1,61 @@
+/* Style the video: 100% width and height to cover the entire window */
+#video_div {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/* Add some content in the middle of the video/page */
+.overlay {
+  position: fixed;
+  /* bottom: 400px; */
+  top: 400px;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 10px;
+}
+
+/* Style the button used to pause/play the video */
+#video_button {
+  /* width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer; */
+  font-family: "Roboto Mono";
+  background-color: transparent;
+  padding: 6px;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  cursor: pointer;
+  width: 120px;
+  margin: 20px auto;
+  border: 3px solid #fff;
+  border-radius: 40px;
+  color: #fff;;
+}
+
+#video_button:hover {
+  /* background: #ddd;
+  color: black; */
+  border: 3px solid #aa88bd;
+  color: #aa88bd;
+}
+
+/* Add some content at the bottom of the video/page */
+.exhibit_overlay {
+  position: fixed;
+  bottom: 0;
+  /* left: 0; */
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 10px;
+}
