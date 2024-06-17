@@ -12,6 +12,7 @@
         <link rel="stylesheet" type="text/css" href="css/styles.css">
         <link rel="icon" type="image/png" href="../favicon.png">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto Mono">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <meta name="description" content="Kowloon Wallaxy Tour">
     </head>
 
@@ -27,8 +28,14 @@
                 <h1>Kowloon Wallaxy Tour</h1>
                 <p>Explore the now-demolished Kowloon Walled City</p>
                 <button id="video_button" onclick="start_tour()">START</button>
-                <button id="video_button" onclick="enter_fullscreen()">&#x26F6;</button>
-                <button id="video_button" onclick="exit_fullscreen()">&#10016;</button>
+                <button id="video_button" onclick="enter_fullscreen()">
+                    <!-- &#x26F6; -->
+                    <i class="material-icons" style="font-size:36px">fullscreen</i>
+                </button>
+                <button id="video_button" onclick="exit_fullscreen()">
+                    <!-- &#10016; -->
+                    <i class="material-icons" style="font-size:36px">fullscreen_exit</i>
+                </button>
             </div>
         </div>
 
