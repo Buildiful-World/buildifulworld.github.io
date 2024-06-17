@@ -16,6 +16,7 @@
         <link rel="stylesheet" type="text/css" href="css/styles.css">
         <link rel="icon" type="image/png" href="../favicon.png">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto Mono">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <meta name="description" content="Kowloon Wallaxy Tour">
     </head>
 
@@ -30,10 +31,15 @@
             <div class="exhibit_overlay">
                 <h1>Test Site (Coming soon: HD version, more content)</h1>
                 <p>[Some useful info about various parts of Kowloon Walled City]</p>
-                <!-- Use a button to pause/play the video with JavaScript -->
-                <button id="video_button" onclick="return_home()">HOME</button>
-                <button id="video_button" onclick="enter_fullscreen()">&#x26F6;</button>
-                <button id="video_button" onclick="exit_fullscreen()">&#10016;</button>
+                <button id="video_button" onclick="enter_fullscreen()">
+                    <!-- &#x26F6; -->
+                    <i class="material-icons" style="font-size:36px">fullscreen</i>
+                </button>
+                <button id="video_button" onclick="return_home()" style="font-size:36px">HOME</button>
+                <button id="video_button" onclick="exit_fullscreen()">
+                    <!-- &#10016; -->
+                    <i class="material-icons" style="font-size:36px">fullscreen_exit</i>
+                </button>
             </div>
         </div>
 
