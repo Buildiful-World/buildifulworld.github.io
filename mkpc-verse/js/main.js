@@ -53,6 +53,8 @@ function action_button_clicked()
 
 function start_tour()
 {
+    is_home = false;
+
     //window.location.href = "kowloon-wallaxy";
 
     // Get the video
@@ -152,7 +154,7 @@ function next_step()
     var sub_text = document.getElementById("subtitle");
 
     // At Home
-    if (sub_tex && sub_text.style.visibility == "visible")
+    if (is_home)
     {
         return;
     }
@@ -225,6 +227,8 @@ function next_step()
 
 function return_home()
 {
+    is_home = true;
+
     // Get the video
     var video = document.getElementById("video_div");
 
