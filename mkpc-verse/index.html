@@ -20,10 +20,15 @@
         <script src="js/main.js"></script>
         <script>new MKPC_Verse();</script>
         <div class="main">
+            
             <!-- The video -->
             <video autoplay muted loop id="video_div">
                 <source src="res/videos/intro.mp4" type="video/mp4">
             </video>
+
+            <audio loop id="audio_div">
+                <source src="res/audio/summerhouse.mp3" type="audio/mp3">
+            </audio>
             
             <!-- Some overlay text to describe the video -->
             <div class="overlay" id="overlay">
@@ -52,6 +57,11 @@
                 progress = 0;
                 timer = 0;
                 is_home = true;
+
+                // var audio_player = document.getElementById("audio_div");
+                // var video_player = document.getElementById("video_div");
+                // if (audio_player) audio_player.play();
+                // if (video_player) video_player.play();
             }
         </script>
     </body>

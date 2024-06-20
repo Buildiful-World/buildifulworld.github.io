@@ -55,7 +55,13 @@ function start_tour()
 {
     is_home = false;
 
-    //window.location.href = "kowloon-wallaxy";
+    var audio = document.getElementById("audio_div");
+
+    if (audio)
+    {
+        audio.setAttribute("src", "res/audio/all_memories.mp3");
+        audio.play();
+    }
 
     // Get the video
     var video = document.getElementById("video_div");
@@ -128,11 +134,11 @@ function start_tour()
         //     // clientConsoleLog("Now playing exhibit " + progress);
 
         //     video.setAttribute("src", "res/videos/exhibit_0" + progress + ".mp4");
-        //     video.poster = "res/images/exhibit_0" + progress + ".png";
-        //     //video.muted = false;
-        //     video.loop = false;
-        //     video.load();
-        //     video.play();
+        //     // video.poster = "res/images/exhibit_0" + progress + ".png";
+        //     // //video.muted = false;
+        //     // video.loop = false;
+        //     // video.load();
+        //     // video.play();
         // }
     }
 
@@ -148,6 +154,62 @@ function start_tour()
     setTimeout(next_step, TIME_EXHIBIT_01);
 }
 
+function on_exhibit_end()
+{
+    clientConsoleLog("Exhibit ended: " + progress);
+
+    if (at_home || progress == 0)
+    {
+        return;
+    }
+
+    if (progress < 6)
+    {
+        progress++;
+    }
+    else
+    {
+        progress = 1;
+    }
+
+    var intro_text = document.getElementById("title");
+
+    if (intro_text)
+    {
+        switch (progress)
+        {
+            case 1:
+                intro_text.innerHTML = "Before its demolition, >50,000 people were crammed into this unplanned slum";
+                break;
+            case 2:
+                intro_text.innerHTML = "Cantonese-speaking communities refer to it as the “City of Darkness”";
+                break;
+            case 3:
+                intro_text.innerHTML = "Upper levels comprised a tangled network of staircases and passageways";
+                break;
+            case 4:
+                intro_text.innerHTML = "Exposed, overhanging electrical wires and dripping pipes were seen all over the place";
+                break;
+            case 5:
+                intro_text.innerHTML = "The city managed to be self-sufficient with its Chinese shopkeepers, and even unlicensed doctors";
+                break;
+            case 6:
+                intro_text.innerHTML = "Many former residents share fond memories of the Kowloon Walled City, despite its often-notorious reputation";
+                break;
+            default:
+                break;
+        }
+    }
+
+    // clientConsoleLog("Now playing exhibit " + progress);
+
+    video.setAttribute("src", "res/videos/exhibit_0" + progress + ".mp4");
+    // video.poster = "res/images/exhibit_0" + progress + ".png";
+    // //video.muted = false;
+    // video.loop = false;
+    // video.load();
+    // video.play();
+}
 
 function next_step()
 {
@@ -228,6 +290,14 @@ function next_step()
 function return_home()
 {
     is_home = true;
+
+    var audio = document.getElementById("audio_div");
+
+    if (audio)
+    {
+        audio.setAttribute("src", "res/audio/summerhouse.mp3");
+        audio.play();
+    }
 
     // Get the video
     var video = document.getElementById("video_div");
