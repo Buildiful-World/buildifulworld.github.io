@@ -149,6 +149,14 @@ function start_tour()
 
 function next_step()
 {
+    var sub_text = document.getElementById("subtitle");
+
+    // At Home
+    if (sub_tex && sub_text.style.visibility == "visible")
+    {
+        return;
+    }
+
     if (progress < 6)
     {
         progress++;
