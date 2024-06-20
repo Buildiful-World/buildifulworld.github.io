@@ -55,8 +55,10 @@ function start_tour()
     {
         //video.setAttribute("src", "res/videos/demo.mp4");
         video.setAttribute("src", "res/videos/exhibit_01.mp4");
-        video.muted = false;
+        video.poster = "res/images/exhibit_01.png";
+        //video.muted = false;
         video.loop = false;
+        video.load();
         video.play();
 
         var intro_text = document.getElementById("title");
@@ -117,8 +119,10 @@ function start_tour()
             // clientConsoleLog("Now playing exhibit " + progress);
 
             video.setAttribute("src", "res/videos/exhibit_0" + progress + ".mp4");
-            video.muted = false;
+            video.poster = "res/images/exhibit_0" + progress + ".png";
+            //video.muted = false;
             video.loop = false;
+            video.load();
             video.play();
         }
     }
