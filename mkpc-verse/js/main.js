@@ -1,10 +1,10 @@
 
-const TIME_EXHIBIT_01 = 8000;
-const TIME_EXHIBIT_02 = 19000;
-const TIME_EXHIBIT_03 = 7000;
-const TIME_EXHIBIT_04 = 7000;
-const TIME_EXHIBIT_05 = 12000;
-const TIME_EXHIBIT_06 = 9000;
+const TIME_EXHIBIT_01 = 6210; // 6:21
+const TIME_EXHIBIT_02 = 20050; // 20:05
+const TIME_EXHIBIT_03 = 7020; // 07:02
+const TIME_EXHIBIT_04 = 11150; // 11:15
+const TIME_EXHIBIT_05 = 11030; // 11:03
+const TIME_EXHIBIT_06 = 10010; // 10:01
 
 function clientConsoleLog(log_content)
 {
