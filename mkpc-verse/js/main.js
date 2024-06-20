@@ -1,4 +1,11 @@
 
+const TIME_EXHIBIT_01 = 8000;
+const TIME_EXHIBIT_02 = 19000;
+const TIME_EXHIBIT_03 = 7000;
+const TIME_EXHIBIT_04 = 7000;
+const TIME_EXHIBIT_05 = 12000;
+const TIME_EXHIBIT_06 = 9000;
+
 function clientConsoleLog(log_content)
 {
     console.log(log_content);
@@ -53,13 +60,13 @@ function start_tour()
 
     if (video)
     {
-        //video.setAttribute("src", "res/videos/demo.mp4");
-        video.setAttribute("src", "res/videos/exhibit_01.mp4");
-        video.poster = "res/images/exhibit_01.png";
+        video.setAttribute("src", "res/videos/demo_old.mp4");
+        // video.setAttribute("src", "res/videos/exhibit_01.mp4");
+        // video.poster = "res/images/exhibit_01.png";
         //video.muted = false;
-        video.loop = false;
-        video.load();
-        video.play();
+        // video.loop = false;
+        // video.load();
+        // video.play();
 
         var intro_text = document.getElementById("title");
 
@@ -77,54 +84,54 @@ function start_tour()
 
         // clientConsoleLog("Now playing exhibit " + progress);
         
-        video.onended = function() {
-            if (progress < 6)
-            {
-                progress++;
-            }
-            else
-            {
-                progress = 1;
-            }
+        // video.onended = function() {
+        //     if (progress < 6)
+        //     {
+        //         progress++;
+        //     }
+        //     else
+        //     {
+        //         progress = 1;
+        //     }
 
-            var intro_text = document.getElementById("title");
+        //     var intro_text = document.getElementById("title");
 
-            if (intro_text)
-            {
-                switch (progress)
-                {
-                    case 1:
-                        intro_text.innerHTML = "Before its demolition, >50,000 people were crammed into this unplanned slum";
-                        break;
-                    case 2:
-                        intro_text.innerHTML = "Cantonese-speaking communities refer to it as the “City of Darkness”";
-                        break;
-                    case 3:
-                        intro_text.innerHTML = "Upper levels comprised a tangled network of staircases and passageways";
-                        break;
-                    case 4:
-                        intro_text.innerHTML = "Exposed, overhanging electrical wires and dripping pipes were seen all over the place";
-                        break;
-                    case 5:
-                        intro_text.innerHTML = "The city managed to be self-sufficient with its Chinese shopkeepers, and even unlicensed doctors";
-                        break;
-                    case 6:
-                        intro_text.innerHTML = "Many former residents share fond memories of the Kowloon Walled City, despite its often-notorious reputation";
-                        break;
-                    default:
-                        break;
-                }
-            }
+        //     if (intro_text)
+        //     {
+        //         switch (progress)
+        //         {
+        //             case 1:
+        //                 intro_text.innerHTML = "Before its demolition, >50,000 people were crammed into this unplanned slum";
+        //                 break;
+        //             case 2:
+        //                 intro_text.innerHTML = "Cantonese-speaking communities refer to it as the “City of Darkness”";
+        //                 break;
+        //             case 3:
+        //                 intro_text.innerHTML = "Upper levels comprised a tangled network of staircases and passageways";
+        //                 break;
+        //             case 4:
+        //                 intro_text.innerHTML = "Exposed, overhanging electrical wires and dripping pipes were seen all over the place";
+        //                 break;
+        //             case 5:
+        //                 intro_text.innerHTML = "The city managed to be self-sufficient with its Chinese shopkeepers, and even unlicensed doctors";
+        //                 break;
+        //             case 6:
+        //                 intro_text.innerHTML = "Many former residents share fond memories of the Kowloon Walled City, despite its often-notorious reputation";
+        //                 break;
+        //             default:
+        //                 break;
+        //         }
+        //     }
 
-            // clientConsoleLog("Now playing exhibit " + progress);
+        //     // clientConsoleLog("Now playing exhibit " + progress);
 
-            video.setAttribute("src", "res/videos/exhibit_0" + progress + ".mp4");
-            video.poster = "res/images/exhibit_0" + progress + ".png";
-            //video.muted = false;
-            video.loop = false;
-            video.load();
-            video.play();
-        }
+        //     video.setAttribute("src", "res/videos/exhibit_0" + progress + ".mp4");
+        //     video.poster = "res/images/exhibit_0" + progress + ".png";
+        //     //video.muted = false;
+        //     video.loop = false;
+        //     video.load();
+        //     video.play();
+        // }
     }
 
     var overlay = document.getElementById("overlay");
@@ -133,8 +140,80 @@ function start_tour()
     {
         overlay.className = "exhibit_overlay";
     }
+
+    timer = 0;
+
+    setTimeout(next_step, TIME_EXHIBIT_01);
 }
 
+
+function next_step()
+{
+    if (progress < 6)
+    {
+        progress++;
+    }
+    else
+    {
+        progress = 1;
+    }
+
+    var intro_text = document.getElementById("title");
+
+    if (intro_text)
+    {
+        switch (progress)
+        {
+            case 1:
+                intro_text.innerHTML = "Before its demolition, >50,000 people were crammed into this unplanned slum";
+                break;
+            case 2:
+                intro_text.innerHTML = "Cantonese-speaking communities refer to it as the “City of Darkness”";
+                break;
+            case 3:
+                intro_text.innerHTML = "Upper levels comprised a tangled network of staircases and passageways";
+                break;
+            case 4:
+                intro_text.innerHTML = "Exposed, overhanging electrical wires and dripping pipes were seen all over the place";
+                break;
+            case 5:
+                intro_text.innerHTML = "The city managed to be self-sufficient with its Chinese shopkeepers, and even unlicensed doctors";
+                break;
+            case 6:
+                intro_text.innerHTML = "Many former residents share fond memories of the Kowloon Walled City, despite its often-notorious reputation";
+                break;
+            default:
+                break;
+        }
+    }
+
+    // clientConsoleLog("Now playing exhibit " + progress);
+    // setTimeout(next_step, 5000);
+
+    switch (progress)
+    {
+        case 1:
+            setTimeout(next_step, TIME_EXHIBIT_01);
+            break;
+        case 2:
+            setTimeout(next_step, TIME_EXHIBIT_02);
+            break;
+        case 3:
+            setTimeout(next_step, TIME_EXHIBIT_03);
+            break;
+        case 4:
+            setTimeout(next_step, TIME_EXHIBIT_04);
+            break;
+        case 5:
+            setTimeout(next_step, TIME_EXHIBIT_05);
+            break;
+        case 6:
+            setTimeout(next_step, TIME_EXHIBIT_06);
+            break;
+        default:
+            break;
+    }
+}
 
 function return_home()
 {
