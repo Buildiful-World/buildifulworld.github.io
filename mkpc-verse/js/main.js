@@ -55,14 +55,6 @@ function start_tour()
 {
     is_home = false;
 
-    var audio = document.getElementById("audio_div");
-
-    if (audio)
-    {
-        audio.setAttribute("src", "res/audio/all_memories.mp3");
-        audio.play();
-    }
-
     // Get the video
     var video = document.getElementById("video_div");
 
@@ -140,6 +132,14 @@ function start_tour()
         //     // video.load();
         //     // video.play();
         // }
+    }
+
+    var audio = document.getElementById("audio_div");
+
+    if (audio)
+    {
+        audio.setAttribute("src", "res/audio/kowloon_wallaxy_bgm.mp3");
+        audio.play();
     }
 
     var overlay = document.getElementById("overlay");
@@ -291,14 +291,6 @@ function return_home()
 {
     is_home = true;
 
-    var audio = document.getElementById("audio_div");
-
-    if (audio)
-    {
-        audio.setAttribute("src", "res/audio/summerhouse.mp3");
-        audio.play();
-    }
-
     // Get the video
     var video = document.getElementById("video_div");
 
@@ -308,6 +300,14 @@ function return_home()
         video.muted = false;
         video.loop = true;
         video.play();
+    }
+
+    var audio = document.getElementById("audio_div");
+
+    if (audio)
+    {
+        audio.setAttribute("src", "res/audio/summerhouse.mp3");
+        audio.play();
     }
 
     var overlay = document.getElementById("overlay");
